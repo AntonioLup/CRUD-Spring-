@@ -4,6 +4,7 @@ import com.example.crudbook.model.Book;
 import com.example.crudbook.repository.RepoBook;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +17,9 @@ import org.slf4j.Logger;
 public class BookController  {
 private final Logger log = LoggerFactory.getLogger(BookController.class);
     private RepoBook repoBook;
+
+    @Value("${app.mensagger}")
+    String mensagge;
 
     @Autowired
     public BookController(RepoBook repoBook) {
